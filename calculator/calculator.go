@@ -1,17 +1,17 @@
 package calculator
 
-func add(a int, b int) int {
+func Add(a int, b int) int {
 	return a + b
 }
 
-func subtract(a int, b int) int {
+func Subtract(a int, b int) int {
 	return a - b
 }
 
-func multiply(a int, b int) int {
+func Multiply(a int, b int) int {
 	return a * b
 }
 
-func divide(a int, b int) int {
+func Divide(a int, b int) int {
 	return a / b
 }
