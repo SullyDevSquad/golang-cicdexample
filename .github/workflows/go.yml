@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: POC
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -22,7 +22,15 @@ jobs:
         go-version: 1.19
 
     - name: Build
-      run: go build -v ./...
+      run: go build -v .
 
     - name: Test
       run: go test -v ./...
+    
+    - name: Upload a Build Artifact
+      if: github.event_name == 'push'
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        # Artifact name
+        name: binary
+        path: ./golang-cicdexample
