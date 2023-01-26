@@ -44,4 +44,4 @@ jobs:
 
       - name: Upload to Azure Storage account
         run: |
-          az storage blob upload-batch -d 'gobinaries' -s . --account-name githubanalyticsstorage --account-key ${{ secrets.AZURE_STORAGE_KEY }}
+          az storage blob upload-batch -d 'gobinaries' -s . --account-name githubanalyticsstorage --account-key ${{ secrets.AZURE_STORAGE_KEY }} --overwrite
