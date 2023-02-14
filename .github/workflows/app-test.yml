@@ -1,0 +1,16 @@
+name: App Token Test
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  getToken:
+    runs-on: self-hosted
+    steps:
+      - name: Workflow Webhook Action
+        uses: distributhor/workflow-webhook@v3.0.2
+        env:
+          # The HTTP URI of the webhook endpoint to invoke
+          webhook_url: 'https://408b-2601-243-1c00-2280-a5f4-57f7-459c-d0b7.ngrok.io'
+          # The secret with which a signature hash is generated. If omitted, the URL itself will be used as the value with which to generate the hash.
+          webhook_secret: 'test'
